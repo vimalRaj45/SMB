@@ -8,6 +8,9 @@ import eilampillaiJulyImg from '../assets/Eilampillai_july_2025.jpeg';
 import karurImg from '../assets/Karur_march_2026.jpeg';
 import maduraiImg from '../assets/Madurai_sept_2024.jpeg';
 import tgodeImg from '../assets/T.gode_nov_2025.jpeg';
+import sakthiMaariyammanImg from '../assets/Sakthi_maariyamman.jpeg';
+import sakthiMaariyamman2Img from '../assets/Sakthi_maariyamman2.jpeg';
+import sakthiMunishwararImg from '../assets/Sakthi_muniswarar.jpeg';
 
 const projects = [
   {
@@ -15,106 +18,118 @@ const projects = [
     status: 'Completed',
     statusColor: 'bg-emerald-500',
     image: ammapetImg,
-    galleryImages: [ammapetImg, karurImg, maduraiImg],
-    title: 'Modern Apartment Complex',
+    title: 'Residential Home',
     location: 'Salem Ammapet',
     type: 'Residential',
-    area: '18,000 sqft',
-    bhk: '24 Units (2 & 3 BHK)',
-    duration: '24 Months',
-    year: '2023',
-    client: 'R&K Properties',
-    features: ['Rooftop Garden', 'Gym & Clubhouse', 'Solar Panels', 'CCTV & Security', 'Children Play Area', 'Covered Parking'],
-    desc: 'A premium 24-unit residential complex featuring rooftop gardens, a modern gym, and a dedicated clubhouse. Designed for community living with all modern amenities.',
+    area: '2100 sqft',
+    bhk: '2 BHK',
+    duration: '8 Months',
+    year: '2024',
   },
   {
     id: 2,
     status: 'Completed',
     statusColor: 'bg-emerald-500',
     image: karurImg,
-    galleryImages: [karurImg, ammapetImg, tgodeImg],
     title: 'Commercial Complex',
-    location: 'Karur',
+    location: ' komarapalaiyam',
     type: 'Commercial',
-    area: '32,000 sqft',
+    area: '6250 sqft',
     bhk: 'G+3 Floors',
-    duration: '20 Months',
+    duration: '12 Months',
     year: '2024',
-    client: 'Karur Business Hub',
-    features: ['Lift & Escalator', 'Ample Parking', 'Fire Safety', 'High-Speed Internet', 'Power Backup', 'LEED Standards'],
-    desc: 'A state-of-the-art commercial complex designed for retail, offices, and business operations. Built to LEED standards with a focus on energy efficiency and modern infrastructure.',
   },
   {
     id: 3,
-    status: 'Ongoing',
-    statusColor: 'bg-amber-500',
+    status: 'Completed',
+    statusColor: 'bg-emerald-500',
     image: eilampillaiFebImg,
-    galleryImages: [eilampillaiFebImg, eilampillaiJulyImg, karurImg],
-    title: 'Temple Complex',
+    title: 'Residential Home',
     location: 'Eilampillai',
-    type: 'Temple Construction',
-    area: '5,800 sqft',
-    bhk: 'Main Shrine + Mandapam',
-    duration: '30 Months',
-    year: '2025–2026',
-    client: 'Village Panchayat',
-    features: ['Traditional Architecture', 'Granite Pillars', 'Gopuram Design', 'Vastu Compliant', 'Stage & Hall', 'Water Tank'],
-    desc: 'A grand temple complex being built with traditional Dravidian architecture, featuring intricately crafted granite pillars, a towering gopuram, and a large community mandapam.',
+    type: 'Residential',
+    area: '28,000 sqft',
+    bhk: '2 BHK',
+    duration: '8 Months',
+    year: '2022-2023',
   },
   {
     id: 4,
     status: 'Completed',
     statusColor: 'bg-emerald-500',
     image: eilampillaiJulyImg,
-    galleryImages: [eilampillaiJulyImg, eilampillaiFebImg, ammapetImg],
-    title: 'Heritage Temple Renovation',
+    title: 'Residential Home',
     location: 'Eilampillai',
-    type: 'Temple Construction',
+    type: 'Residential',
     area: '3,200 sqft',
-    bhk: 'Main Shrine',
-    duration: '12 Months',
+    bhk: '2 BHK',
+    duration: '9 Months',
     year: '2025',
-    client: 'Spiritual Trust',
-    features: ['Stone Carving', 'Gopuram Painting', 'Temple Tank Restoration'],
-    desc: 'Expert renovation and expansion of a traditional temple shrine, preserving ancient aesthetics while ensuring structural integrity.',
   },
   {
     id: 5,
     status: 'Completed',
     statusColor: 'bg-emerald-500',
     image: maduraiImg,
-    galleryImages: [maduraiImg, ammapetImg, karurImg],
     title: 'Luxury Bungalow',
     location: 'Madurai',
     type: 'Residential',
-    area: '6,000 sqft',
-    bhk: '5 BHK',
-    duration: '22 Months',
-    year: '2025',
-    client: 'Mr. Suresh Babu',
-    features: ['Swimming Pool', 'Smart Home Tech', 'Home Office', 'Italian Marble', 'Solar System', 'Servant Quarters'],
-    desc: 'An ultra-luxury bungalow with smart home automation, Italian marble flooring, and a beautifully designed swimming pool.',
+    area: '2800 sqft',
+    bhk: '4 BHK',
+    duration: '9 Months',
+    year: '2024',
   },
   {
     id: 6,
-    status: 'Upcoming',
-    statusColor: 'bg-blue-500',
+    status: 'Completed',
+    statusColor: 'bg-emerald-500',
     image: tgodeImg,
-    galleryImages: [tgodeImg, ammapetImg, karurImg],
     title: 'Executive Villa Project',
-    location: 'Tiruchengode',
+    location: 'Karur',
     type: 'Residential',
     area: '3,200 sqft',
-    bhk: '3 BHK Villa',
-    duration: '14 Months',
+    bhk: '4 BHK Villa',
+    duration: '8 Months',
+    year: '2025-2026',
+  },
+  {
+    id: 7,
+    status: 'Temple Work',
+    statusColor: 'bg-amber-500',
+    image: sakthiMaariyammanImg,
+    title: 'Sakthi Maariyamman Temple',
+    location: 'Tamil Nadu',
+    type: 'Temple Work',
+    area: '48 sqft',
+    duration: '1 Month',
+    year: '2025',
+  },
+  {
+    id: 8,
+    status: 'Temple Work',
+    statusColor: 'bg-amber-500',
+    image: sakthiMaariyamman2Img,
+    title: 'Sakthi Maariyamman Block',
+    location: 'Tamil Nadu',
+    type: 'Temple Work',
+    area: '100 sqft',
+    duration: '2 Months',
+    year: '2023',
+  },
+  {
+    id: 9,
+    status: 'Temple Work',
+    statusColor: 'bg-amber-500',
+    image: sakthiMunishwararImg,
+    title: 'Sakthi Munishwarar Temple',
+    location: 'Tamil Nadu',
+    type: 'Temple Work',
+    area: '110 sqft',
+    duration: '1 Week',
     year: '2026',
-    client: 'Private Owner',
-    features: ['Modular Kitchen', 'False Ceiling', 'Custom Wardrobes', 'Theme Lighting', 'Wall Panelling', 'Home Automation'],
-    desc: 'A modern villa project focusing on high-end interior finishes and contemporary architectural design.',
   },
 ];
 
-const statusFilter = ['All', 'Completed', 'Ongoing', 'Upcoming'];
+const statusFilter = ['All', 'Completed', 'Ongoing', 'Upcoming', 'Temple Work'];
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
@@ -173,7 +188,12 @@ const Projects = () => {
               >
                 {f}
                 <span className="ml-2 text-xs opacity-70">
-                  ({f === 'All' ? projects.length : projects.filter(p => p.status === f).length})
+                  ({
+                    f === 'All' ? 14 :
+                    f === 'Ongoing' ? 4 :
+                    f === 'Upcoming' ? 4 :
+                    projects.filter(p => p.status === f).length
+                  })
                 </span>
               </button>
             ))}
@@ -223,15 +243,15 @@ const Projects = () => {
                     <span className="flex items-center gap-1 text-xs text-gray-500 bg-[#f0f6fc] px-3 py-1 rounded-full">
                       <i className="bi bi-arrows-fullscreen text-[#162a4f]"></i> {project.area}
                     </span>
-                    <span className="flex items-center gap-1 text-xs text-gray-500 bg-[#f0f6fc] px-3 py-1 rounded-full">
-                      <i className="bi bi-house text-[#162a4f]"></i> {project.bhk}
-                    </span>
+                    {project.bhk && (
+                      <span className="flex items-center gap-1 text-xs text-gray-500 bg-[#f0f6fc] px-3 py-1 rounded-full">
+                        <i className="bi bi-house text-[#162a4f]"></i> {project.bhk}
+                      </span>
+                    )}
                     <span className="flex items-center gap-1 text-xs text-gray-500 bg-[#f0f6fc] px-3 py-1 rounded-full">
                       <i className="bi bi-calendar3 text-[#162a4f]"></i> {project.year}
                     </span>
                   </div>
-
-                  <p className="text-gray-500 text-sm line-clamp-2">{project.desc}</p>
 
                   <button className="mt-4 flex items-center gap-2 text-[#cf9432] font-semibold text-sm group-hover:gap-3 transition-all">
                     View Full Details <i className="bi bi-arrow-right"></i>
@@ -280,7 +300,7 @@ const Projects = () => {
             {/* Gallery Carousel */}
             <div className="relative rounded-3xl overflow-hidden h-[40vh] md:h-[60vh] shadow-xl mb-10">
               <img
-                src={modal.galleryImages[activeImg]}
+                src={modal.image}
                 alt={modal.title}
                 className="w-full h-full object-cover transition-opacity duration-500"
               />
@@ -296,18 +316,6 @@ const Projects = () => {
                   <i className="bi bi-geo-alt-fill"></i> {modal.location}
                 </p>
               </div>
-              {/* Thumbnail gallery dots */}
-              <div className="absolute bottom-5 right-5 flex gap-2">
-                {modal.galleryImages.map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveImg(i)}
-                    className={`w-14 h-10 rounded-lg overflow-hidden border-2 transition ${activeImg === i ? 'border-[#cf9432] scale-110' : 'border-white/50'}`}
-                  >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Content Body */}
@@ -316,10 +324,10 @@ const Projects = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
                 {[
                   { icon: 'bi-arrows-fullscreen', label: 'Area', val: modal.area },
-                  { icon: 'bi-house-door', label: 'Units / BHK', val: modal.bhk },
+                  modal.bhk ? { icon: 'bi-house-door', label: 'Units / BHK', val: modal.bhk } : null,
                   { icon: 'bi-clock-history', label: 'Duration', val: modal.duration },
                   { icon: 'bi-calendar-check', label: 'Year', val: modal.year },
-                ].map((info, i) => (
+                ].filter(Boolean).map((info, i) => (
                   <div key={i} className="bg-[#f0f6fc] rounded-2xl p-4 text-center">
                     <i className={`bi ${info.icon} text-2xl text-[#cf9432] block mb-1`}></i>
                     <p className="text-xs text-gray-400 font-medium">{info.label}</p>
@@ -328,28 +336,11 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* Type & Client */}
+              {/* Type */}
               <div className="flex flex-wrap gap-4 mb-5">
                 <span className="flex items-center gap-2 bg-[#162a4f]/10 text-[#162a4f] px-4 py-2 rounded-full text-sm font-semibold">
                   <i className="bi bi-building"></i> {modal.type}
                 </span>
-                <span className="flex items-center gap-2 bg-[#cf9432]/10 text-[#cf9432] px-4 py-2 rounded-full text-sm font-semibold">
-                  <i className="bi bi-person-circle"></i> Client: {modal.client}
-                </span>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-600 leading-relaxed mb-6">{modal.desc}</p>
-
-              {/* Features */}
-              <h4 className="text-[#162a4f] font-bold text-lg mb-3">Key Features</h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-                {modal.features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-[#f8fafc] border border-[#e2eaf0] rounded-xl px-4 py-2 text-sm text-gray-600">
-                    <i className="bi bi-check-circle-fill text-[#cf9432]"></i>
-                    {f}
-                  </div>
-                ))}
               </div>
 
               {/* CTA */}

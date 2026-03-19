@@ -2,9 +2,9 @@ import React from 'react';
 
 const AreasServed = () => {
   const areas = [
-    { id: 1, name: 'GM Tex Kumarapalayam', icon: 'bi-building',          desc: 'Our Head Office & Primary Hub' },
+    { id: 1, name: 'Tharamangalam', icon: 'bi-building',          desc: 'Our Head Office & Primary Hub' },
     { id: 2, name: 'Karur',                icon: 'bi-geo-alt-fill',       desc: 'Active Residential Projects' },
-    { id: 3, name: 'T. Gode',              icon: 'bi-map-fill',           desc: 'Expert Construction Services' },
+    { id: 3, name: 'Tiruchengodu',              icon: 'bi-map-fill',           desc: 'Expert Construction Services' },
     { id: 4, name: 'Eilampillai',          icon: 'bi-pin-map-fill',       desc: 'Commercial Development' },
     { id: 5, name: 'Salem Ammapet',        icon: 'bi-geo-fill',           desc: 'Premium City Projects' },
     { id: 6, name: 'Madurai',              icon: 'bi-house-heart-fill',   desc: 'Luxury Villa Developments' },

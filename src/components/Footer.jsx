@@ -8,7 +8,7 @@ const Footer = () => {
         <div>
           <img src="https://i.ibb.co/6cwgM6cx/Whats-App-Image-2026-02-24-at-8-39-10-PM.jpg" alt="Sri Mayil Builders Logo" className="h-12 w-auto mb-3 rounded-full" />
           <p className="mt-4 text-sm leading-relaxed">
-            Building trust, one project at a time. Led by <strong className="text-[#dfb36b]">Er. S. Dineshkumar</strong>, Civil Engineer.
+            Building trust, one project at a time. Led by <span className="whitespace-nowrap"><strong className="text-[#dfb36b]">Er. S. Dineshkumar</strong>, Civil Engineer.</span>
           </p>
           <ul className="mt-4 space-y-2 text-sm text-gray-300">
             <li><a href="tel:+918124627498" className="hover:text-[#cf9432] flex items-center gap-2"><i className="bi bi-telephone-fill text-[#cf9432]"></i> +91 81246 27498</a></li>
@@ -60,9 +60,9 @@ const Footer = () => {
           </div>
           <h5 className="text-sm font-bold text-[#dfb36b] mb-2">Areas We Serve</h5>
           <ul className="space-y-1 text-sm text-gray-300">
-            <li>GM Tex Kumarapalayam</li>
+            <li>Tharamangalam</li>
             <li>Karur</li>
-            <li>T. Gode</li>
+            <li>Tiruchengodu</li>
             <li>Eilampillai</li>
             <li>Salem Ammapet</li>
             <li>Madurai</li>
@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-sm text-gray-300 mt-12 border-t border-gray-600 pt-6">
-        © 2026 Sri Mayil Builders. All rights reserved. | Led by Er. S. Dineshkumar, Civil Engineer
+        © 2026 Sri Mayil Builders. All rights reserved. | Led by <span className="whitespace-nowrap">Er. S. Dineshkumar, Civil Engineer</span>
       </div>
     </footer>
   );

@@ -118,7 +118,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col items-center group">
             <i className="bi bi-people-fill text-2xl md:text-3xl text-[#cf9432] mb-2 group-hover:scale-125 transition-transform"></i>
-            <div className="text-white text-lg md:text-xl font-bold font-outfit">10+ Happy</div>
+            <div className="text-white text-lg md:text-xl font-bold font-outfit">100%</div>
             <div className="text-white/30 text-[9px] font-black tracking-widest uppercase">Satisfied Clients</div>
           </div>
         </div>

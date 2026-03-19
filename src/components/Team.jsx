@@ -1,9 +1,10 @@
 import React from 'react';
-import saminathanImg from '../assets/Saminatha_fin.jpeg';
-import gopinathImg from '../assets/Gopinath_fin.jpeg';
-import karthikeyanImg from '../assets/karthikeyan_fin.jpeg';
-import mahendranImg from '../assets/Mahendran_fin.jpeg';
+import saminathanImg from '../assets/Saminatha_updated.jpeg';
+import gopinathImg from '../assets/Gopinath_updated.jpeg';
+import karthikeyanImg from '../assets/Karthikeyan_updated.jpeg';
+import mahendranImg from '../assets/Mahendran_updated.jpeg';
 import dineshkumarImg from '../assets/Dhinesh.jpeg';
+import sathishImg from '../assets/Sathish_Kumar_updated.jpeg';
 
 const teamMembers = [
   { 
@@ -12,6 +13,14 @@ const teamMembers = [
     role: 'Founder & Managing Director', 
     edu: 'Civil Engineer', 
     img: dineshkumarImg,
+    accent: '#cf9432'
+  },
+  { 
+    id: 5, 
+    name: 'R. Mahindran', 
+    role: 'Technical Supervisor', 
+    edu: 'Diploma in EEE', 
+    img: mahendranImg,
     accent: '#cf9432'
   },
   { 
@@ -39,19 +48,11 @@ const teamMembers = [
     accent: '#162a4f'
   },
   { 
-    id: 5, 
-    name: 'R. Mahindran', 
-    role: 'Technical Supervisor', 
-    edu: 'Diploma in EEE', 
-    img: mahendranImg,
-    accent: '#cf9432'
-  },
-  { 
     id: 6, 
     name: 'R. Sathish Kumar', 
     role: 'Human Resources', 
     edu: 'MBA', 
-    img: "https://cdn-icons-png.flaticon.com/512/149/149071.png", 
+    img: sathishImg, 
     accent: '#162a4f'
   },
 ];

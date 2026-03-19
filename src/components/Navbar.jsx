@@ -133,6 +133,7 @@ const Navbar = () => {
             { name: 'About', href: '#about', icon: 'bi-info-circle' },
             { name: 'Services', href: '#services', icon: 'bi-tools' },
             { name: 'Projects', href: '#projects', icon: 'bi-building' },
+            { name: 'Team', href: '#team', icon: 'bi-people' },
             { name: 'Estimation', href: '#estimation', icon: 'bi-calculator' },
             { name: 'Contact', href: '#contact', icon: 'bi-envelope' },
           ].map((item) => (
@@ -206,6 +207,7 @@ const Navbar = () => {
               { name: 'About', href: '#about', icon: 'bi-info-circle' },
               { name: 'Services', href: '#services', icon: 'bi-tools' },
               { name: 'Projects', href: '#projects', icon: 'bi-building' },
+              { name: 'Team', href: '#team', icon: 'bi-people' },
             ].map((item, idx) => (
               <a 
                 key={item.name}
