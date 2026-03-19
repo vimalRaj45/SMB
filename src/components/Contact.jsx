@@ -24,7 +24,7 @@ const Contact = () => {
       // Simulate a small delay to experience the cool animation
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      await fetch("https://script.google.com/macros/s/AKfycbwZfe7uTw-0ppuX5DKu_rzqrjdmTKs1fISguH4ccgPsP-SG5AKz_tuk1fD7UiNvMf85UQ/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbzGdMqEk4kgDZhiLVVbp3DPvym6ECTg7EAS7W9mNfOBS-JVdYFbJQGzOWyJzQP9F8TqGA/exec", {
         method: "POST",
         mode: "no-cors",
         body: JSON.stringify(data)
