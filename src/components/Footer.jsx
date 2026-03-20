@@ -54,9 +54,9 @@ const Footer = () => {
           <h4 className="text-xl font-bold mb-4 text-[#dfb36b]">Connect</h4>
           <div className="flex space-x-4 text-2xl mb-6">
             <a href="#" className="hover:text-[#cf9432] social-hammer"><i className="bi bi-facebook"></i></a>
-            <a href="#" className="hover:text-[#cf9432] social-hammer"><i className="bi bi-instagram"></i></a>
+            <a href="https://www.instagram.com/srimayilbuilders?igsh=MW1ycGhxZ2lzcDUwdg==" className="hover:text-[#cf9432] social-hammer"><i className="bi bi-instagram"></i></a>
             <a href="#" className="hover:text-[#cf9432] social-hammer"><i className="bi bi-linkedin"></i></a>
-            <a href="#" className="hover:text-[#cf9432] social-hammer"><i className="bi bi-whatsapp"></i></a>
+            <a href="https://wa.me/918124627498" className="hover:text-[#cf9432] social-hammer"><i className="bi bi-whatsapp"></i></a>
           </div>
           <h5 className="text-sm font-bold text-[#dfb36b] mb-2">Areas We Serve</h5>
           <ul className="space-y-1 text-sm text-gray-300">
