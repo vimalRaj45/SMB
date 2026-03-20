@@ -47,7 +47,7 @@ const projects = [
     title: 'Residential Home',
     location: 'Eilampillai',
     type: 'Residential',
-    area: '28,000 sqft',
+    area: '2830 sqft',
     bhk: '2 BHK',
     duration: '8 Months',
     year: '2022-2023',
