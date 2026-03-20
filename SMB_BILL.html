@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proforma · Srimayil Builders – VSGRPS (single page)</title>
+  <!-- Tailwind via CDN + basic layer -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Outfit font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Outfit', sans-serif; background: #F0F6FC; }
+    .table-row-hover:hover { background-color: #EBF4FB; }
+    /* print-specific: compress and force one page */
+    @media print {
+      body { background: white; padding: 0.1in; margin: 0; }
+      .no-print, .no-print * { display: none !important; }
+      .print\:shadow-none { box-shadow: none !important; }
+      .print\:border-0 { border: 0 !important; }
+      .print\:p-2 { padding: 0.5rem !important; }
+      .print\:text-xs { font-size: 0.75rem !important; }
+      .print\:leading-tight { line-height: 1.2 !important; }
+      .print\:mt-0 { margin-top: 0 !important; }
+      .print\:mb-1 { margin-bottom: 0.25rem !important; }
+      .print\:py-2 { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+      .print\:px-4 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+      .print\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+      html, body { height: auto; overflow: visible; }
+      .max-w-4xl { max-width: 100%; margin: 0 auto; }
+      table { font-size: 10px !important; }
+      td, th { padding-top: 4px !important; padding-bottom: 4px !important; }
+      .bg-\[\#0B2545\] { background-color: #0B2545 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .bg-\[\#EBF4FB\] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .text-white { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body class="p-3 md:p-6 bg-[#F0F6FC] text-[#0D1B2A] print:bg-white print:p-2">
+
+  <!-- print button – hidden when printing -->
+  <div class="max-w-4xl mx-auto mb-3 flex justify-end no-print">
+    <button onclick="window.print()" class="inline-flex items-center gap-2 bg-[#1B6CA8] hover:bg-[#1A5276] text-white text-sm font-semibold py-2 px-5 rounded-lg transition">
+      <i class="bi bi-printer-fill"></i> Print / Save PDF (fits one page)
+    </button>
+  </div>
+
+  <!-- main document card -->
+  <div class="max-w-4xl mx-auto bg-white border border-[#C8DCF0] shadow-lg shadow-[#0B2545]/5 rounded-[4px] overflow-hidden print:shadow-none print:border-0">
+
+    <!-- top stripe -->
+    <div class="h-[4px] w-full bg-gradient-to-r from-[#0B2545] via-[#1B6CA8] to-[#0EA5E9] print:h-[3px]"></div>
+
+    <!-- header: brand + meta -->
+    <div class="flex flex-wrap justify-between items-start px-6 md:px-8 pt-6 pb-5 border-b border-[#D6E8F7] gap-4 print:px-4 print:py-2 print:pb-1">
+      <!-- left -->
+      <div>
+        <div class="text-2xl font-extrabold text-[#0B2545] tracking-tight print:text-xl">VSGRPS</div>
+        <div class="text-[10px] font-medium uppercase tracking-widest text-[#1B6CA8] mt-0.5 print:text-[8px]">Freelance Web Designer & Developer</div>
+        <div class="mt-2 space-y-0.5 text-xs text-[#4A6080] print:text-[8px] print:space-y-0">
+          <span class="flex items-center gap-1"><i class="bi bi-envelope-fill text-[#1B6CA8] text-sm print:text-[8px]"></i> vsgrps360@gmail.com</span>
+          <span class="flex items-center gap-1"><i class="bi bi-geo-alt-fill text-[#1B6CA8] text-sm print:text-[8px]"></i> Tamil Nadu, India</span>
+        </div>
+      </div>
+      <!-- right -->
+      <div class="text-right">
+        <div class="text-2xl font-bold text-[#0B2545] uppercase tracking-tight print:text-xl">Proforma</div>
+        <div class="text-[10px] text-[#4A6080] uppercase tracking-wide print:text-[7px]">Quotation / Delivery Statement</div>
+        <div class="mt-2 flex flex-col gap-1 items-end">
+          <div class="flex items-center gap-2 text-xs print:text-[8px]">
+            <span class="text-[#4A6080] flex items-center gap-1"><i class="bi bi-calendar-event text-[#1B6CA8] print:text-[8px]"></i> Issue Date</span>
+            <span class="font-semibold text-[#0B2545] w-24 text-right" id="todayDate"></span>
+          </div>
+        </div>
+        <!-- status pill -->
+        <div class="mt-1 inline-flex items-center gap-1 bg-[#EFF8FF] border border-[#D6E8F7] rounded-full py-1 px-3 text-[9px] font-bold uppercase text-[#1B6CA8] print:py-0.5 print:px-2 print:text-[7px]">
+          <i class="bi bi-check-circle-fill text-[#22C55E] text-xs print:text-[8px]"></i> Delivered
+        </div>
+      </div>
+    </div>
+
+    <!-- parties (from / to) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 border-b border-[#D6E8F7] print:grid-cols-2 print:text-[9px]">
+      <!-- from -->
+      <div class="p-6 md:p-8 border-r-0 md:border-r border-[#D6E8F7] print:p-3">
+        <div class="text-[9px] font-bold uppercase tracking-widest text-[#1B6CA8] flex items-center gap-1 mb-1 print:text-[7px]"><i class="bi bi-building-fill"></i> From</div>
+        <div class="text-sm font-semibold text-[#0B2545] flex items-center gap-2 print:text-xs">VSGRPS 
+          <span class="text-[9px] font-medium bg-[#EBF4FB] border border-[#D6E8F7] rounded-full px-2 py-0 text-[#1B6CA8] print:text-[7px]"><i class="bi bi-person-workspace mr-1"></i>Freelancer</span>
+        </div>
+        <div class="mt-1 space-y-0.5 text-xs text-[#4A6080] print:text-[8px]">
+          <div class="flex items-center gap-1"><i class="bi bi-geo-alt text-[#1B6CA8] print:text-[8px]"></i> Tamil Nadu, India</div>
+          <div class="flex items-center gap-1"><i class="bi bi-envelope text-[#1B6CA8] print:text-[8px]"></i> vsgrps360@gmail.com</div>
+          <div class="flex items-center gap-1"><i class="bi bi-globe2 text-[#1B6CA8] print:text-[8px]"></i> valarmathi2005kumar@gmail.com</div>
+          <div class="flex items-center gap-1"><i class="bi bi-person-workspace text-[#1B6CA8] print:text-[8px]"></i> Freelance Web Designer & Developers</div>
+        </div>
+      </div>
+      <!-- to -->
+      <div class="p-6 md:p-8 print:p-3">
+        <div class="text-[9px] font-bold uppercase tracking-widest text-[#1B6CA8] flex items-center gap-1 mb-1 print:text-[7px]"><i class="bi bi-person-fill"></i> Bill To</div>
+        <div class="text-sm font-semibold text-[#0B2545] print:text-xs">Srimayil Builders</div>
+        <div class="mt-1 space-y-0.5 text-xs text-[#4A6080] print:text-[8px]">
+          <div class="flex items-center gap-1"><i class="bi bi-geo-alt text-[#1B6CA8]"></i> Tamil Nadu, India</div>
+          <div class="flex items-center gap-1"><i class="bi bi-envelope text-[#1B6CA8]"></i> srimayilbuilders@gmail.com</div>
+          <div class="flex items-center gap-1"><i class="bi bi-globe2 text-[#1B6CA8]"></i> www.srimayilbuilders.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- project bar (support changed to 30 days) -->
+    <div class="bg-[#EBF4FB] px-6 md:px-8 py-2 flex flex-wrap gap-4 border-b border-[#D6E8F7] print:py-1 print:gap-2 print:text-[8px]">
+      <div class="flex items-center gap-1"><i class="bi bi-laptop text-[#1B6CA8] text-sm"></i><div><div class="text-[9px] font-bold uppercase text-[#4A6080]">Project</div><div class="text-xs font-semibold text-[#0B2545] print:text-[9px]">Business Website</div></div></div>
+      <div class="flex items-center gap-1"><i class="bi bi-layers text-[#1B6CA8] text-sm"></i><div><div class="text-[9px] font-bold uppercase text-[#4A6080]">Scope</div><div class="text-xs font-semibold text-[#0B2545] print:text-[9px]">Design, Dev & Deployment</div></div></div>
+      <div class="flex items-center gap-1"><i class="bi bi-patch-check-fill text-[#1B6CA8] text-sm"></i><div><div class="text-[9px] font-bold uppercase text-[#4A6080]">Status</div><div class="text-xs font-semibold text-[#1B6CA8] print:text-[9px]">Completed & Live</div></div></div>
+      <div class="flex items-center gap-1"><i class="bi bi-headset text-[#1B6CA8] text-sm"></i><div><div class="text-[9px] font-bold uppercase text-[#4A6080]">Support</div><div class="text-xs font-semibold text-[#0B2545] print:text-[9px]">30 Days Free</div></div></div>
+    </div>
+
+    <!-- items table -->
+    <div class="px-6 md:px-8 pt-5 print:px-4 print:pt-2">
+      <table class="w-full text-sm border-collapse print:text-[9px]">
+        <thead>
+          <tr class="bg-[#0B2545] text-white text-[10px] font-bold uppercase tracking-wider print:text-[7px]">
+            <th class="py-2 px-3 text-left w-8 print:py-1 print:px-1">#</th>
+            <th class="py-2 px-3 text-left print:py-1 print:px-1">Description of Service</th>
+            <th class="py-2 px-3 text-center w-16 print:py-1 print:px-1">Qty</th>
+            <th class="py-2 px-3 text-right w-24 print:py-1 print:px-1">Unit Price</th>
+            <th class="py-2 px-3 text-right w-24 print:py-1 print:px-1">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#D6E8F7]">
+          <tr class="table-row-hover">
+            <td class="py-3 px-3 print:py-1"><div class="w-6 h-6 rounded-full bg-[#D6E8F7] text-[#0B2545] flex items-center justify-center text-xs font-bold print:w-4 print:h-4 print:text-[8px]">01</div></td>
+            <td class="py-3 px-3 print:py-1">
+              <div class="font-semibold text-[#0B2545] flex items-center gap-2 text-xs print:text-[9px]"><i class="bi bi-code-slash text-[#1B6CA8]"></i> Website Design & Development</div>
+              <div class="text-[10px] text-[#4A6080] leading-4 print:text-[7px] print:leading-tight">Responsive UI/UX design, front-end development, mobile-first.</div>
+            </td>
+            <td class="py-3 px-3 text-center text-[#4A6080] print:py-1">1</td>
+            <td class="py-3 px-3 text-right tabular-nums print:py-1">₹ 2000</td>
+            <td class="py-3 px-3 text-right font-semibold print:py-1">₹ 2000</td>
+          </tr>
+          <tr class="table-row-hover">
+            <td class="py-3 px-3 print:py-1"><div class="w-6 h-6 rounded-full bg-[#D6E8F7] text-[#0B2545] flex items-center justify-center text-xs font-bold print:w-4 print:h-4 print:text-[8px]">02</div></td>
+            <td class="py-3 px-3 print:py-1">
+              <div class="font-semibold text-[#0B2545] flex items-center gap-2 text-xs print:text-[9px]"><i class="bi bi-cloud-upload-fill text-[#1B6CA8]"></i> Cloudflare Setup & Deployment</div>
+              <div class="text-[10px] text-[#4A6080] leading-4 print:text-[7px]">Domain, CDN, SSL, DNS, go-live.</div>
+            </td>
+            <td class="py-3 px-3 text-center text-[#4A6080] print:py-1">1</td>
+            <td class="py-3 px-3 text-right tabular-nums print:py-1">₹ 500</td>
+            <td class="py-3 px-3 text-right font-semibold print:py-1">₹ 500</td>
+          </tr>
+          <tr class="table-row-hover">
+            <td class="py-3 px-3 print:py-1"><div class="w-6 h-6 rounded-full bg-[#D6E8F7] text-[#0B2545] flex items-center justify-center text-xs font-bold print:w-4 print:h-4 print:text-[8px]">03</div></td>
+            <td class="py-3 px-3 print:py-1">
+              <div class="font-semibold text-[#0B2545] flex items-center gap-2 text-xs print:text-[9px]"><i class="bi bi-envelope-check-fill text-[#1B6CA8]"></i> Google Apps Script Integration</div>
+              <div class="text-[10px] text-[#4A6080] leading-4 print:text-[7px]">Enquiry → email + Google Sheets storage.</div>
+            </td>
+            <td class="py-3 px-3 text-center text-[#4A6080] print:py-1">1</td>
+            <td class="py-3 px-3 text-right tabular-nums print:py-1">₹ 0</td>
+            <td class="py-3 px-3 text-right font-semibold print:py-1">₹ 0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- totals box -->
+    <div class="px-6 md:px-8 pb-6 flex justify-end mt-1 print:px-4 print:pb-2">
+      <div class="w-full md:w-64 print:w-56">
+        <div class="flex justify-between py-1 px-3 border-b border-[#D6E8F7] text-xs print:text-[8px] print:py-0">
+          <span class="text-[#4A6080] flex items-center gap-1"><i class="bi bi-calculator text-[#1B6CA8]"></i> Subtotal</span>
+          <span class="font-medium">₹ 2,500</span>
+        </div>
+        <div class="bg-[#0B2545] rounded-b-md flex justify-between items-center py-2 px-4 print:py-1 print:px-2">
+          <span class="text-[#D6E8F7] text-[10px] font-bold uppercase tracking-wider flex items-center gap-1"><i class="bi bi-award-fill text-[#0EA5E9] print:text-[8px]"></i> Total Due</span>
+          <span class="text-white text-base font-bold print:text-sm">₹ 2,500</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- deliverables -->
+    <div class="border-t border-[#D6E8F7] px-6 md:px-8 py-4 print:px-3 print:py-2">
+      <div class="text-[10px] font-bold uppercase tracking-widest text-[#1B6CA8] flex items-center gap-1 mb-2 print:text-[8px]"><i class="bi bi-check2-all"></i> What Was Delivered</div>
+      <div class="grid grid-cols-2 gap-1.5 text-[10px] print:grid-cols-2 print:gap-1">
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-phone text-[#1B6CA8]"></i> Fully Responsive</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-lightning-charge-fill text-[#1B6CA8]"></i> Fast Loading</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-palette2 text-[#1B6CA8]"></i> Clean UI</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-search text-[#1B6CA8]"></i> SEO-Friendly</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-chat-dots-fill text-[#1B6CA8]"></i> Enquiry form</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-shield-lock-fill text-[#1B6CA8]"></i> SSL Secured</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-table text-[#1B6CA8]"></i> Google Sheets</div>
+        <div class="flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded py-1.5 px-2 font-medium text-[#0B2545] print:text-[7px] print:py-0.5"><i class="bi bi-bell-fill text-[#1B6CA8]"></i> Email notif.</div>
+      </div>
+    </div>
+
+    <!-- links (UPDATED with actual URLs and 30d support note subtly in terms) -->
+    <div class="px-6 md:px-8 pb-2 -mt-1 print:px-3">
+      <div class="text-[10px] font-bold uppercase tracking-widest text-[#1B6CA8] flex items-center gap-1 mb-1 print:text-[8px]"><i class="bi bi-link-45deg"></i> Project Links</div>
+      <div class="flex flex-wrap gap-2 text-[10px] print:text-[7px]">
+        <a href="https://www.srimayilbuilders.com" target="_blank" class="inline-flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded px-3 py-1 font-medium text-[#1B6CA8] hover:bg-[#D6E8F7] print:px-2 print:py-0"><i class="bi bi-browser-chrome"></i> Live Website</a>
+        <a href="https://github.com/vimalRaj45/SMB" target="_blank" class="inline-flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded px-3 py-1 font-medium text-[#1B6CA8] hover:bg-[#D6E8F7] print:px-2 print:py-0"><i class="bi bi-github"></i> GitHub Source</a>
+        <a href="https://drive.google.com/file/d/1SDzczqejdqBNbRTFKGf6zbwOFecDwQ4g/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-1 bg-[#EBF4FB] border border-[#D6E8F7] rounded px-3 py-1 font-medium text-[#1B6CA8] hover:bg-[#D6E8F7] print:px-2 print:py-0"><i class="bi bi-google-drive text-[#0F9D58]"></i> ZIP Backup</a>
+      </div>
+    </div>
+
+    <!-- terms with explicit 30 days support note (updated) -->
+    <div class="border-t border-[#D6E8F7] px-6 md:px-8 py-3 print:px-3 print:py-1">
+      <div class="text-[10px] font-bold uppercase tracking-widest text-[#1B6CA8] flex items-center gap-1 mb-1 print:text-[8px]"><i class="bi bi-file-earmark-text"></i> Terms & Notes</div>
+      <div class="grid grid-cols-2 gap-1.5 text-[9px] print:grid-cols-2 print:gap-1 print:text-[6px]">
+        <div class="flex items-start gap-1 bg-[#FAFCFF] border-l-2 border-[#1B6CA8] border rounded-r p-1.5"><i class="bi bi-globe text-[#1B6CA8]"></i> Domain by client</div>
+        <div class="flex items-start gap-1 bg-[#FAFCFF] border-l-2 border-[#1B6CA8] border rounded-r p-1.5"><i class="bi bi-cloud text-[#1B6CA8]"></i> Cloudflare hosting</div>
+        <div class="flex items-start gap-1 bg-[#FAFCFF] border-l-2 border-[#1B6CA8] border rounded-r p-1.5"><i class="bi bi-plus-circle text-[#1B6CA8]"></i> Updates quoted</div>
+        <div class="flex items-start gap-1 bg-[#FAFCFF] border-l-2 border-[#1B6CA8] border rounded-r p-1.5"><i class="bi bi-headset text-[#1B6CA8]"></i> 30 days free support</div>
+        <div class="flex items-start gap-1 bg-[#FAFCFF] border-l-2 border-[#1B6CA8] border rounded-r p-1.5"><i class="bi bi-credit-card text-[#1B6CA8]"></i> Full payment due</div>
+        <div class="flex items-start gap-1 bg-[#FAFCFF] border-l-2 border-[#1B6CA8] border rounded-r p-1.5"><i class="bi bi-envelope-check text-[#1B6CA8]"></i> Please check this email: srimayilbuilders@gmail.com for Google Sheets access </div>
+      </div>
+    </div>
+
+    <!-- signature -->
+    <div class="border-t border-[#D6E8F7] px-6 md:px-8 py-3 flex justify-end print:py-1 print:px-3">
+      <div class="text-center w-40 print:w-36">
+        <div class="border-t-2 border-[#0B2545] pt-1 mt-2"></div>
+        <div class="text-base font-bold text-[#0B2545] print:text-sm">VSGRPS</div>
+        <div class="text-[9px] uppercase tracking-wide text-[#4A6080] print:text-[6px]">Freelance Web Developer</div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="bg-[#0B2545] px-6 md:px-8 py-2 flex flex-wrap justify-between items-center gap-2 text-white print:text-[7px] print:py-1 print:px-3">
+      <div>
+        <p class="text-[9px] text-white/60 flex items-center gap-1"><i class="bi bi-briefcase-fill"></i> Srimayil Builders Project</p>
+        <p class="text-[8px] text-white/40 flex items-center gap-1">Issued by VSGRPS — Freelancer</p>
+      </div>
+      <span class="text-[#0EA5E9] text-xs flex items-center gap-1"><i class="bi bi-heart-fill text-[#F87171]"></i> Thank you</span>
+    </div>
+  </div>
+
+  <!-- today's date script -->
+  <script>
+    (function() {
+      const today = new Date();
+      const day = today.getDate();
+      const month = today.toLocaleString('default', { month: 'long' });
+      const year = today.getFullYear();
+      document.getElementById('todayDate').innerText = `${day} ${month} ${year}`;
+    })();
+  </script>
+</body>
+</html>
